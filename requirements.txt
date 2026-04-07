@@ -1,0 +1,4 @@
+# Tidak ada dependency eksternal
+# Hanya menggunakan Python Standard Library
+
+# Python 3.7+ required
