@@ -1,4 +1,4 @@
-# Tidak ada dependency eksternal
-# Hanya menggunakan Python Standard Library
+# Dependencies
+streamlit>=1.28.0
 
-# Python 3.7+ required
+# Python 3.8+ required

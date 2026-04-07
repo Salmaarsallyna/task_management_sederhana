@@ -15,7 +15,7 @@ Aplikasi manajemen task/tugas sederhana berbasis CLI (Command Line Interface) de
 ## 🚀 Cara Menjalankan
 
 ### Prerequisites
-- Python 3.7 atau lebih baru
+- Python 3.8 atau lebih baru
 
 ### Install & Run
 
@@ -24,7 +24,18 @@ Aplikasi manajemen task/tugas sederhana berbasis CLI (Command Line Interface) de
 git clone https://github.com/username/task_management_sederhana.git
 cd task_management_sederhana
 
-# Jalankan aplikasi
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Opsi 1: Web App (Streamlit) 🌐 **REKOMENDASI**
+```bash
+streamlit run app.py
+```
+Buka browser → http://localhost:8501
+
+### Opsi 2: CLI App
+```bash
 python main.py
 ```
 
