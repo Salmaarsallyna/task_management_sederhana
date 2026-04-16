@@ -1,107 +1,50 @@
-# 📋 Task Management Sederhana
+# 📋 Task Management Sederhana (Bisa Dibuka Tanpa Python)
 
-Aplikasi manajemen task/tugas sederhana berbasis CLI (Command Line Interface) dengan penyimpanan data menggunakan JSON.
+Aplikasi manajemen task/tugas super mudah berbasis Web Statis! Kini dengan antarmuka modern yang dapat langsung Anda jalankan di browser mana saja secara instan.
 
-## ✨ Fitur
+## ✨ Fitur Utama
 
-- ➕ **Tambah Task** - Buat task baru dengan judul, deskripsi, status, priority, dan due date
-- 📋 **Lihat Semua Task** - Tampilkan daftar semua task yang tersimpan
-- 🔍 **Cari Task** - Cari task berdasarkan ID
-- ✏️ **Update Task** - Edit informasi task yang sudah ada
-- 🗑️ **Hapus Task** - Hapus task dari daftar
-- 📊 **Filter by Status** - Filter task berdasarkan status (pending, in_progress, completed)
-- 🎯 **Filter by Priority** - Filter task berdasarkan priority (low, medium, high)
+- ⚡ **Tanpa Install / Tanpa Server** - Cukup *double-click* file `index.html`
+- 🎨 **Minimalis & Interaktif** - Tema biru muda (Light Blue) dengan efek *glassmorphism* dan animasi yang memanjakan mata.
+- ➕ **Tambah / Edit Deskripsi Task** - Simpan prioritas tugas dan tanggal tenggat waktu.
+- 💾 **Auto Save** - Data akan otomatis tersimpan di Local Storage browser (tidak akan hilang kalau di-refresh).
+- 🔍 **Realtime Search & Filter** - Cari tugas dan saring berdasarkan Prioritas maupun Status.
 
 ## 🚀 Cara Menjalankan
 
-### Prerequisites
-- Python 3.8 atau lebih baru
+Lupakan Python, instalasi dependensi, atau pengetikan di Command Line.
 
-### Install & Run
-
-```bash
-# Clone repository
-git clone https://github.com/username/task_management_sederhana.git
-cd task_management_sederhana
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Opsi 1: Web App (Streamlit) 🌐 **REKOMENDASI**
-```bash
-streamlit run app.py
-```
-Buka browser → http://localhost:8501
-
-### Opsi 2: CLI App
-```bash
-python main.py
-```
+1. Buka folder `task_management_sederhana`.
+2. Klik 2x file **`index.html`** (Nanti akan otomatis terbuka di Chrome / Edge / Firefox / Safari).
+3. Selesai! Mulailah buat daftar tugas Anda.
 
 ## 📁 Struktur Project
 
-```
+```text
 task_management_sederhana/
-├── main.py          # Entry point aplikasi CLI
-├── models.py        # Definisi data class Task
-├── storage.py       # Logika penyimpanan JSON
-├── tasks.json       # File database (auto-generated)
+├── index.html       # Antarmuka (UI) Aplikasi
+├── style.css        # Desain dan Gaya (Warna Biru Muda, Layout, dll.)
+├── script.js        # Logika aplikasi (Simpan Data & Interaksi)
 ├── README.md        # Dokumentasi
-└── .gitignore       # Git ignore rules
+├── .gitignore       
+└── arsip/           # Berisi file-file code Python dan CLI versi lama
 ```
 
 ## 📖 Cara Penggunaan
 
-1. **Jalankan aplikasi** dengan `python main.py`
-2. **Pilih menu** sesuai kebutuhan (ketik angka 0-7)
-3. **Ikuti instruksi** yang muncul di layar
+1. **Tambah Tugas:** Klik tombol **"Tambah Task Baru"** di sudut kanan atas. Masukkan detail tugas Anda (Judul wajib diisi).
+2. **Selesaikan Tugas:** Centang kotak [*checkbox* = kotak persegi] di sebelah kiri judul tugas untuk menandainya sebagai Selesai.
+3. **Filter Data:** Gunakan dropdown di atas untuk hanya melihat tugas *High Priority* atau yang belum selesai.
+4. **Hapus Sekaligus:** Klik tombol "Hapus Semua Selesai" jika Anda sudah menyelesaikan banyak tugas dan ingin mengosongkan riwayat tugas yang sudah centang biru.
 
-### Status Task
-- `pending` - Belum dikerjakan
-- `in_progress` - Sedang dikerjakan
-- `completed` - Selesai
+## 💾 Tentang Data Anda
 
-### Priority Task
-- `low` - Prioritas rendah 🟢
-- `medium` - Prioritas sedang 🟡
-- `high` - Prioritas tinggi 🔴
-
-## 💾 Penyimpanan Data
-
-Data disimpan secara otomatis dalam file `tasks.json` di folder yang sama. Tidak perlu setup database!
-
-## 📝 Contoh Penggunaan
-
-```
-📋 TASK MANAGEMENT SEDERHANA
-========================================
-1. ➕ Tambah Task
-2. 📋 Lihat Semua Task
-3. 🔍 Cari Task by ID
-4. ✏️  Update Task
-5. 🗑️  Hapus Task
-6. 📊 Filter by Status
-7. 🎯 Filter by Priority
-0. 🚪 Keluar
-========================================
-Pilih menu: 1
-
---- TAMBAH TASK ---
-Judul Task: Belajar Python
-Deskripsi (opsional): Belajar OOP dan File Handling
-Priority: medium
-Status: pending
-Due Date (YYYY-MM-DD, opsional): 2024-12-31
-
-✅ Task berhasil ditambahkan dengan ID: 1
-```
+Aplikasi ini menggunakan teknologi yang disebut **Local Storage** pada browser Anda. Data tugas Anda aman secara lokal di laptop/komputer Anda. Jika folder ini Anda pindahkan ke HP sekalipun, Anda bisa melihat antarmukanya (meskipun data di laptop dan HP akan tersimpan terpisah di masing-masing perangkat).
 
 ## 🔧 Teknologi
-
-- Python 3.7+
-- Standard Library: `dataclasses`, `json`, `datetime`
+- HTML5 (Semantic Structure)
+- CSS3 (Custom Variables, Flexbox, Animations)
+- Vanilla JavaScript (ES6, LocalStorage API, DOM Manipulation)
 
 ## 📄 Lisensi
-
-Open Source - Bebas digunakan dan dimodifikasi! 🎉
+Open Source 🎉

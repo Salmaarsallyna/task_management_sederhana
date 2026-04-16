@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Sederhana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <h1>📋 Task Management</h1>
+                <p>Atur tugas harianmu dengan mudah dan cepat</p>
+            </div>
+            
+            <button class="btn btn-primary" id="open-modal-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Tambah Task Baru
+            </button>
+        </header>
+
+        <!-- Filters & Search -->
+        <section class="filters-container">
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="search-input" placeholder="Cari task berdasarkan judul atau deskripsi...">
+            </div>
+            <div class="dropdown-filters">
+                <select id="filter-status">
+                    <option value="all">Semua Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <select id="filter-priority">
+                    <option value="all">Semua Prioritas</option>
+                    <option value="high">High priority</option>
+                    <option value="medium">Medium priority</option>
+                    <option value="low">Low priority</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Task List -->
+        <main>
+            <div class="task-stats">
+                <span id="total-tasks">0 Tasks</span>
+                <button class="btn btn-text" id="clear-all-btn">Hapus Semua Selesai</button>
+            </div>
+            
+            <!-- Empty state hidden by default -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <div class="empty-icon">✅</div>
+                <h3>Belum ada task</h3>
+                <p>Klik tombol "Tambah Task Baru" untuk mulai mencatat tugasmu.</p>
+            </div>
+
+            <div id="task-list" class="task-list">
+                <!-- Task items will be injected here by JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Tambah Task Baru</h2>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+                
+                <div class="form-group">
+                    <label for="task-title">Judul Task *</label>
+                    <input type="text" id="task-title" required placeholder="Contoh: Belajar HTML & CSS">
+                </div>
+
+                <div class="form-group">
+                    <label for="task-desc">Deskripsi (Opsional)</label>
+                    <textarea id="task-desc" rows="3" placeholder="Tambahkan detail tugas..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-priority">Prioritas</label>
+                        <select id="task-priority">
+                            <option value="low">🟢 Low</option>
+                            <option value="medium" selected>🟡 Medium</option>
+                            <option value="high">🔴 High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-date">Tenggat Waktu (Opsional)</label>
+                        <input type="date" id="task-date">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-form-btn">Batal</button>
+                    <button type="submit" class="btn btn-primary" id="save-task-btn">Simpan Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
